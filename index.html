@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="hero">
+    <p class="eyebrow">INDUSTRIAL ENGINEERING • DATA ANALYSIS</p>
+    <h1>Factory Simulator 🏭</h1>
+    <p class="subtitle">
+        Analyze production, costs, demand and profitability through a simplified factory model.
+    </p>
+</div>
+
+<h2>Factory Settings</h2>
+<p class="section-description">
+    Configure the main operating and economic parameters of the factory.
+</p>
+
+<div class="settings-panel">
+
+    <div class="input-group">
+        <label for="machines">Number of Machines:</label>
+        <input type="number" id="machines" name="Machines" min="1" value="1">
+    </div>
+
+    <div class="input-group">
+        <label for="workers">Number of Workers:</label>
+        <input type="number" id="workers" name="Workers" min="1" value="1">
+    </div>
+
+    <div class="input-group">
+        <label for="hours">Working hours per day:</label>
+        <input type="number" id="hours" name="Hours" min="1" value="8" max="24">
+    </div>
+
+    <div class="input-group">
+        <label for="productionRate">Machine production rate (units/hour):</label>
+        <input type="number" id="productionRate" value="10" min="1">
+    </div>
+
+    <div class="input-group">
+        <label for="workerCost">Cost per worker per day ($):</label>
+        <input type="number" id="workerCost" value="100" min="0">
+    </div>
+
+    <div class="input-group">
+        <label for="sellingPrice">Selling price per unit ($):</label>
+        <input type="number" id="sellingPrice" value="20" min="0">
+    </div>
+
+    <div class="input-group">
+        <label for="demand">Maximum daily demand (units):</label>
+        <input type="number" id="demand" value="100" min="1">
+    </div>
+
+    <div class="input-group">
+        <label for="materialCost">Material cost per unit ($):</label>
+        <input type="number" id="materialCost" value="5" min="0">
+    </div>
+
+    <div class="input-group">
+        <label for="machineCost">Machine cost per day ($):</label>
+        <input type="number" id="machineCost" value="50" min="0">
+    </div>
+
+</div>
+
+<button id="simulate">Run Simulation</button>
+
+<h2>Simulation Results</h2>
+<p class="section-description">
+    Key performance indicators from the current factory configuration.
+</p>
+
+<div class="results">
+
+    <div class="card">
+        <h3>Production</h3>
+        <p id="production">--</p>
+    </div>
+
+    <div class="card">
+        <h3>Units Sold</h3>
+        <p id="unitsSold">--</p>
+    </div>
+
+    <div class="card">
+        <h3>Worker Cost</h3>
+        <p id="workerCostResult">--</p>
+    </div>
+
+    <div class="card">
+        <h3>Material Cost</h3>
+        <p id="materialCostResult">--</p>
+    </div>
+
+    <div class="card break-even-card">
+      <h3>Break-even Point</h3>
+      <p id="breakEvenResult">--</p>
+    </div>
+
+    <div class="card">
+        <h3>Revenue</h3>
+        <p id="revenueResult">--</p>
+    </div>
+
+    <div class="card profit-card">
+      <h3>Profit</h3>
+      <p id="profitResult">--</p>
+    </div>
+
+</div>
+
+<h2>Workforce Optimization</h2>
+<p class="section-description">
+    Compare daily profit across different workforce sizes to identify the most profitable configuration.
+</p>
+
+<div id="chart"></div>
+
+<br>
+
+<button id="optimize">Optimize Workforce</button>
+
+<h2>Workforce Analysis</h2>
+
+<p id="optimizationResult">Run the optimization to see the results.</p>
+
+<h2>About the Project</h2>
+
+<div class="info-section">
+    <p>
+        Factory Simulator is an educational decision-support tool designed
+        to explore how production capacity, workforce, demand, pricing and
+        operating costs affect factory profitability.
+    </p>
+
+    <p>
+        The project combines concepts from Industrial Engineering, Economics,
+        data analysis and programming to simulate simplified production
+        decisions.
+    </p>
+</div>
+
+<h2>Methodology</h2>
+
+<div class="info-section">
+
+    <h3>Production</h3>
+    <p>
+        Production = Machines × Production Rate × Working Hours × Worker Efficiency
+    </p>
+
+    <h3>Units Sold</h3>
+    <p>
+        Units Sold = min(Production, Demand)
+    </p>
+
+    <h3>Revenue</h3>
+    <p>
+        Revenue = Units Sold × Selling Price
+    </p>
+
+    <h3>Total Costs</h3>
+    <p>
+        Total Costs = Worker Cost + Material Cost + Machine Cost
+    </p>
+
+    <h3>Profit</h3>
+    <p>
+        Profit = Revenue − Total Costs
+    </p>
+
+    <h3>Break-even Point</h3>
+   <p>
+      Break-even Units = (Worker Cost + Machine Cost) ÷
+     (Selling Price − Material Cost)
+</p>
+
+    <h3>Workforce Optimization</h3>
+    <p>
+        The simulator evaluates different workforce sizes and compares their
+        estimated daily profits to identify the configuration with the highest
+        profit under the selected conditions.
+    </p>
+
+    <p class="methodology-note">
+        This simulator uses simplified assumptions for educational purposes.
+        It is not intended to represent a complete financial or operational
+        model of a real factory.
+    </p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
